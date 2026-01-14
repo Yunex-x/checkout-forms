@@ -1,134 +1,111 @@
-// app/page.tsx
-export default function CheckoutPage() {
+export default function Page() {
   return (
-    <main className="min-h-screen bg-white flex items-center justify-center px-6">
-      <div className="w-full max-w-[1200px] grid grid-cols-1 md:grid-cols-2 gap-20">
-        {/* Payment */}
-        <section className="border border-gray-200 p-12 rounded-lg">
-          <h2 className="text-xl font-semibold mb-4">Payment</h2>
-          <hr className="mb-6" />
+    <main className="min-h-screen flex items-center justify-center bg-white">
+      {/* Page container */}
+      <div className="w-screen h-[1024px] grid grid-cols-2">
 
-          {/* Pay With */}
-          <div className="mb-6">
-            <p className="text-sm font-medium mb-3">Pay With:</p>
-            <div className="flex gap-6 text-sm">
-              <label className="flex items-center gap-2">
-                <input type="radio" name="pay" defaultChecked />
-                Card
-              </label>
-              <label className="flex items-center gap-2 text-gray-400">
-                <input type="radio" name="pay" disabled />
-                Bank
-              </label>
-              <label className="flex items-center gap-2 text-gray-400">
-                <input type="radio" name="pay" disabled />
-                Transfer
-              </label>
-            </div>
-          </div>
+        {/* Left column */}
+<section className="bg-white">
+  <div
+    className="
+      absolute
+      left-[130px]
+      top-[75px]
+      w-[572px]
+      h-[685px]
+      rounded-[8px]
+      p-[48px]
+    "
+  >
+    <h1 className="text-[24px] font-semibold">
+      Payment
+    </h1>
 
-          {/* Card Number */}
-          <div className="mb-4">
-            <label className="block text-sm mb-2">Card Number</label>
+    <div className="w-[476px] h-px bg-[#D9D9D9] my-[8px]" />
+
+    <div className="flex flex-col gap-[36px]">
+      <div>
+        <span className="text-[18px] font-medium">Pay With:</span>
+      </div>
+
+      <div className="flex text-[16px] text-[#ACACAC] gap-4">
+        <div className="flex items-center gap-2">
+          <input type="radio" name="payment" />
+          <label>Card</label>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <input type="radio" name="payment" />
+          <label>Bank</label>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <input type="radio" name="payment" />
+          <label>Transfer</label>
+        </div>
+      </div>
+
+      <div className="w-[476px] flex flex-col gap-[24px]">
+        {/* Card Number */}
+        <div className="flex flex-col gap-[16px]">
+          <label className="text-[18px] font-medium">Card Number</label>
+          <input
+            type="text"
+            placeholder="1234 5678 9101 1121"
+            className="h-[44px] px-[12px] border border-[#D9D9D9] rounded-[6px] text-sm outline-none"
+          />
+        </div>
+
+        {/* Expiration + CVV */}
+        <div className="flex gap-6 items-center">
+          <div className="flex flex-col gap-[18px] flex-1">
+            <label className="text-[18px] font-medium">Expiration Date</label>
             <input
               type="text"
-              placeholder="1234 5678 9101 1121"
-              className="w-full border rounded-md px-4 py-3 text-sm"
+              placeholder="MM/YY"
+              className="h-[44px] px-[12px] border border-[#D9D9D9] rounded-[6px] text-sm outline-none"
             />
           </div>
 
-          {/* Exp / CVV */}
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div>
-              <label className="block text-sm mb-2">Expiration Date</label>
-              <input
-                type="text"
-                placeholder="MM/YY"
-                className="w-full border rounded-md px-4 py-3 text-sm"
-              />
-            </div>
-            <div>
-              <label className="block text-sm mb-2">CVV</label>
-              <input
-                type="text"
-                placeholder="123"
-                className="w-full border rounded-md px-4 py-3 text-sm"
-              />
-            </div>
-          </div>
-
-          {/* Save card */}
-          <label className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-            <input type="checkbox" />
-            Save card details
-          </label>
-
-          {/* Button */}
-          <button className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-4 rounded-md">
-            Pay USD 59.28
-          </button>
-
-          {/* Note */}
-          <p className="text-xs text-gray-400 mt-4 leading-relaxed">
-            Your personal data will be used to process your order, support your
-            experience throughout this website, and for other purposes
-            described in our privacy policy.
-          </p>
-        </section>
-
-        {/* Order Summary */}
-        <section>
-          <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-          <hr className="mb-6" />
-
-          {/* Product */}
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-14 h-14 bg-gray-200 rounded-md" />
-            <div className="flex-1">
-              <p className="font-medium text-sm">Taxmax Leather Bag</p>
-              <p className="text-xs text-gray-400">Brown Vegan Leather</p>
-              <p className="text-xs text-gray-400">Qty: 2</p>
-            </div>
-            <p className="font-medium text-sm">$49.80</p>
-          </div>
-
-          {/* Coupon */}
-          <div className="flex gap-3 mb-6">
+          <div className="flex flex-col gap-[18px] flex-1">
+            <label className="text-[18px] font-medium">CVV</label>
             <input
               type="text"
-              placeholder="Gift or discount code"
-              className="flex-1 border rounded-md px-4 py-3 text-sm"
+              placeholder="123"
+              className="h-[44px] px-[12px] border border-[#D9D9D9] rounded-[6px] text-sm outline-none"
             />
-            <button className="px-6 py-3 bg-gray-300 rounded-md text-sm">
-              Apply
-            </button>
           </div>
+        </div>
 
-          {/* Prices */}
-          <div className="space-y-3 text-sm">
-            <div className="flex justify-between">
-              <span>Subtotal</span>
-              <span>$49.80</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Shipping</span>
-              <span>$7.24</span>
-            </div>
-          </div>
+        {/* Save card */}
+        <label className="flex items-center gap-[16px] text-sm text-[#ACACAC]">
+          <input type="checkbox" />
+          Save card details
+        </label>
+      </div>
 
-          <hr className="my-6" />
+      <div className="w-[476px] flex flex-col gap-[23px]">
+        {/* CTA Button */}
+        <button className="h-[48px] bg-[#32C766] text-white text-[16px] font-medium rounded-[6px]">
+          Pay USD59.28
+        </button>
 
-          {/* Total */}
-          <div className="flex justify-between items-end">
-            <div>
-              <p className="text-sm font-medium">Total</p>
-              <p className="text-xs text-gray-400">
-                Including $2.24 in taxes
-              </p>
-            </div>
-            <p className="text-2xl font-semibold">$59.28</p>
-          </div>
+        {/* Helper text */}
+        <p className="text-[14px] text-[#ACACAC] leading-[18px]">
+          Your personal data will be used to process your order, support your
+          experience throughout this website, and for other purposes described
+          in our privacy policy.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+        {/* Right column */}
+        <section className="bg-[#F9FAFA]">
+          {/* Right content goes here */}
         </section>
+
       </div>
     </main>
   );
