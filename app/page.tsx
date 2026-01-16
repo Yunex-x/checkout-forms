@@ -27,7 +27,8 @@ export default function Page() {
   const [orderId, setOrderId] = useState<string | null>(null);
 
   /* ✅ STRICT VIDEO FLOW */
-  const handlePay = () => {
+  const handlePay = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const canProceed = true; // validation / API later
 
     if (!canProceed) {
@@ -74,7 +75,7 @@ export default function Page() {
               >
                 <h1 className="text-[24px] font-semibold">Payment</h1>
 
-                <div className="flex flex-col gap-[36px]">
+                <form onSubmit={handlePay} className="flex flex-col gap-[36px]">
                   <div className="w-full max-w-[476px] h-px bg-[#D9D9D9] my-[8px]" />
 
                   <PaymentMethods
@@ -93,8 +94,8 @@ export default function Page() {
                     />
                   )}
 
-                  <PayCTA isLoading={false} onPay={handlePay} />
-                </div>
+                  <PayCTA isLoading={false} />
+                </form>
               </div>
             </section>
 
