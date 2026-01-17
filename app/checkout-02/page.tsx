@@ -1,3 +1,4 @@
+import { CreditCard, Van } from "lucide-react";
 import ProductCarousel from "./components/ProductCarousel";
 
 export default function CheckoutPage() {
@@ -19,9 +20,9 @@ export default function CheckoutPage() {
 
         <div className="absolute left-[16px] top-[136px] w-[343px] h-[56px] bg-[#F5F5F5] rounded-[4px]" />
 
-        <span className="absolute left-[72px] top-[155px] font-['SF_Pro_Display'] text-[15px] leading-[18px] font-[400] text-[#212529]">
-          Add Address
-        </span>
+        <div className="absolute left-[30px] top-[155px] font-['SF_Pro_Display'] text-[15px] leading-[18px] font-[400] text-[#212529]">
+          <Van className="inline-block mr-2 " />   Add Address
+        </div>
 
         {/* DIVIDER */}
         <div className="absolute left-0 top-[208px] w-[375px] h-[8px] bg-[#F5F5F5]" />
@@ -33,8 +34,8 @@ export default function CheckoutPage() {
 
         <div className="absolute left-[16px] top-[266px] w-[343px] h-[366px] bg-[#F5F5F5] rounded-[4px]" />
 
-        <span className="absolute left-[72px] top-[285px] font-['SF_Pro_Display'] text-[15px] leading-[18px] font-[400] text-[#212529]">
-          Add Credit / Debit Card
+        <span className="absolute left-[30px] top-[285px] font-['SF_Pro_Display'] text-[15px] leading-[18px] font-[400] text-[#212529]">
+          <CreditCard className="inline-block mr-2" /> Add Credit / Debit Card
         </span>
 
         {/* INPUTS */}
@@ -89,10 +90,25 @@ export default function CheckoutPage() {
         </span>
 
         {/* CTA */}
-        <div className="absolute left-[195.5px] top-[860px] w-[163.5px] h-[56px] bg-[rgba(52,152,219,0.37)] rounded-[4px]" />
-        <span className="absolute left-[232px] top-[877px] font-['Avenir'] text-[17px] leading-[22px] font-[800] text-white">
-          Checkout
-        </span>
+        {/* CTA */}
+        <div
+          className="
+    absolute
+    left-[195.5px]
+    top-[860px]
+    w-[163.5px]
+    h-[56px]
+    bg-[rgba(52,152,219,0.37)]
+    rounded-[4px]
+    flex
+    items-center
+    justify-center
+  "
+        >
+          <span className="text-[17px] font-[800] text-white">
+            Pay Now
+          </span>
+        </div>
 
         <span className="absolute left-[16px] top-[926px] right-[16px] font-['SF_Pro_Display'] text-[11px] leading-[13px] font-[400] tracking-[0.2px] text-[#868E96]">
           This is the final step, after you touching Pay Now button, the payment will be transaction
