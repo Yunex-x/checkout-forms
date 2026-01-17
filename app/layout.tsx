@@ -1,9 +1,10 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Catamaran } from "next/font/google";
 import type { Metadata } from "next";
 
-const inter = Inter({
+const catamaran = Catamaran({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={catamaran.className}>{children}</body>
     </html>
   );
 }
